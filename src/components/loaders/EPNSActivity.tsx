@@ -1,48 +1,101 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import * as React from 'react';
+import {View, ActivityIndicator, Platform, StyleSheet} from 'react-native';
 
 import MaskedView from '@react-native-masked-view/masked-view';
+import {LinearGradient} from 'expo-linear-gradient';
+
+import GLOBALS from '../../globals';
 
 
 export type EPNSActivityProps = {
-  size?: string;
+  style?: any;
+  size?: number | 'small' | 'large' | undefined;
+  color?: string;
 };
 
 export const EPNSActivity = (props: EPNSActivityProps) => {
-  return (
-    <View>
-        <Text>EPNSActivity  {props.size}</Text>
+  const {style, size, color} = props;
 
+  return (
+    <View
+      style={[
+        styles.container,
+        style,
+        size === 'small' ? styles.small : styles.big,
+      ]}>
+      {Platform.OS === 'android' || color ? (
+        <ActivityIndicator
+          // style={styles.activity}
+          size={size}
+          color={color ? color : GLOBALS.COLORS.GRADIENT_THIRD}
+        />
+      ) : (
         <MaskedView
-          style={{ flex: 1, flexDirection: 'row', height: '100%' }}
+          style={styles.maskedView}
           maskElement={
-            <View
-              style={{
-                // Transparent background because mask is based off alpha channel.
-                backgroundColor: 'transparent',
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 60,
-                  color: 'black',
-                  fontWeight: 'bold',
-                }}
-              >
-                Basic Mask
-              </Text>
+            <View style={styles.maskedElementView}>
+              <ActivityIndicator
+                // style={styles.activity}
+                size={size}
+                color={GLOBALS.COLORS.BLACK}
+              />
             </View>
-          }
-        >
-          {/* Shows behind the mask, you can put anything here, such as an image */}
-          <View style={{ flex: 1, height: '100%', backgroundColor: '#324376' }} />
-          <View style={{ flex: 1, height: '100%', backgroundColor: '#F5DD90' }} />
-          <View style={{ flex: 1, height: '100%', backgroundColor: '#F76C5E' }} />
-          <View style={{ flex: 1, height: '100%', backgroundColor: '#e1e1e1' }} />
-      </MaskedView>
+          }>
+          <ActivityIndicator
+            // style={styles.activity}
+            size={size}
+            color={GLOBALS.COLORS.WHITE}
+          />
+          <LinearGradient
+            colors={[
+              GLOBALS.COLORS.GRADIENT_PRIMARY,
+              GLOBALS.COLORS.GRADIENT_SECONDARY,
+              GLOBALS.COLORS.GRADIENT_THIRD,
+            ]}
+            style={[
+              styles.fullgradient,
+              size === 'small' ? styles.small : styles.big,
+            ]}
+            start={[0.1, 0.3]}
+            end={[1, 1]}
+          />
+        </MaskedView>
+      )}
     </View>
   );
 };
+
+// Styling
+const styles = StyleSheet.create({
+  container: {
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  small: {
+    width: 40,
+    height: 20,
+  },
+  big: {
+    height: 36,
+    width: 36,
+  },
+  maskedView: {
+    flex: 1,
+    flexDirection: 'row',
+    height: '100%',
+  },
+  maskedElementView: {
+    backgroundColor: 'transparent',
+    flex: 1,
+    alignItems: 'center',
+  },
+  maskedTitle: {
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  fullgradient: {
+    alignItems: 'flex-end',
+    width: '100%',
+  },
+});
