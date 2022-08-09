@@ -12,7 +12,7 @@ const dummyData = parseApiResponse(DEFAULT_NOTIFICATIONS);
 export default function App() {
   const scrollViewRef = React.useRef<null | ScrollView>(null);
 
-  const [user, setUser] = React.useState('0xCdBE6D076e05c5875D90fa35cc85694E1EAFBBd1');
+  const [user, setUser] = React.useState('0xD26A7BF7fa0f8F1f3f73B056c9A67565A6aFE63c');
   const [notifData, setNotifData] = React.useState<any>([]);
   const [pageSize, setPageSize] = React.useState('10');
 
