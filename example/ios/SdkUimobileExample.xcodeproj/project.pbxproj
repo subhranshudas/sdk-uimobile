@@ -11,18 +11,18 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2734E9DF003F5D8715F0F6F2 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A1B6D734220481E0F9A7FC /* ExpoModulesProvider.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F3387F0DC4A5C68EA74B0115 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F281CEF2F51678BF6B81E /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11A1B6D734220481E0F9A7FC /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-SdkUimobileExample/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SdkUimobileExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SdkUimobileExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SdkUimobileExample/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = SdkUimobileExample/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SdkUimobileExample/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SdkUimobileExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SdkUimobileExample/main.m; sourceTree = "<group>"; };
+		2E0F281CEF2F51678BF6B81E /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-SdkUimobileExample/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-SdkUimobileExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SdkUimobileExample.debug.xcconfig"; path = "Target Support Files/Pods-SdkUimobileExample/Pods-SdkUimobileExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SdkUimobileExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SdkUimobileExample.release.xcconfig"; path = "Target Support Files/Pods-SdkUimobileExample/Pods-SdkUimobileExample.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-SdkUimobileExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SdkUimobileExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,14 +42,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11B2B6F2B1C87CA056BE6372 /* SdkUimobileExample */ = {
-			isa = PBXGroup;
-			children = (
-				11A1B6D734220481E0F9A7FC /* ExpoModulesProvider.swift */,
-			);
-			name = SdkUimobileExample;
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* SdkUimobileExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +64,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7AE09C11279C71F800D948B9 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				E756328D1664EFE3090D0554 /* SdkUimobileExample */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +87,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				98954A426DA6FF081EB5684C /* ExpoModulesProviders */,
+				7AE09C11279C71F800D948B9 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -102,14 +102,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		98954A426DA6FF081EB5684C /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				11B2B6F2B1C87CA056BE6372 /* SdkUimobileExample */,
-			);
-			name = ExpoModulesProviders;
-			sourceTree = "<group>";
-		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +109,14 @@
 				5709B34CF0A7D63546082F79 /* Pods-SdkUimobileExample.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E756328D1664EFE3090D0554 /* SdkUimobileExample */ = {
+			isa = PBXGroup;
+			children = (
+				2E0F281CEF2F51678BF6B81E /* ExpoModulesProvider.swift */,
+			);
+			name = SdkUimobileExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +290,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				2734E9DF003F5D8715F0F6F2 /* ExpoModulesProvider.swift in Sources */,
+				F3387F0DC4A5C68EA74B0115 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
